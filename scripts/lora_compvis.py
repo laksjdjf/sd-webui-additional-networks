@@ -236,7 +236,7 @@ class LoRAChain:
             return self.org_forward(x)
 
         # if no LoRA for this subprompt, do not apply LoRA
-        if self.container.text_encoder_sub_prompt_index >= len(self.loras):
+        if self.container.text_encoder_sub_prompt_index >= len(self.loras) or len(self.loras) == 0:
             return self.org_forward(x)
         lora = self.loras[self.container.text_encoder_sub_prompt_index]
         if lora is None:

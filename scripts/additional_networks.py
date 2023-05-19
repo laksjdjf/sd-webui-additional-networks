@@ -479,7 +479,7 @@ class Script(scripts.Script):
             # set all member to (i,1)
             for i in range(len(conds_list)):
                 # conds = conds_list[i]
-                conds_list[i] = [(i, 1.0) for _ in range(batch_size)]
+                conds_list[i] = [(i, 1.0)]
         else:
             print("No 'conds_list' in the parent scope. Web UI might be different version.")
 
